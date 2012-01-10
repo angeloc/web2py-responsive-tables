@@ -23,4 +23,9 @@ If you want to use this plugin in you custom layout, you have to include this co
 It's important to include the conditional directives for IE, because IE doesn't supports this responsive tables design, 
 so it's disabled.
 
+Plugin works changing on the fly tables aspect when the resolution of target device is smaller than 700 pixels,
+it uses a combination of css media queries and javascript to accomplish the goal. 
+If you want to change the resolution you have to edit both the css and the javascript 
+(replacing 700 with your desired value). 
+
 Angelo

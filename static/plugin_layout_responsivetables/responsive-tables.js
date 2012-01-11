@@ -14,15 +14,15 @@ function set_table_headers(){
 		jQuery("div").not("form").children("table").each(function() {
 	   	curtable = jQuery(this);
 	   	curtable.find("td:empty").html("&nbsp;");
-	   	curhead = curtable.children("thead").children("tr").children("th");
+	   	curhead = curtable.find("thead > tr > th");
 	   	if (curhead.length > 0) {
-		   	curtable.children("tbody").children("tr").each(function() {
-		   		jQuery(this).children("td").each(function(index){
-		   			curth = curhead.eq(index).html();
-		   			curth = (curth != null) ? curth : '&nbsp;';
-		   			jQuery(this).before('<span class="resp-header">' + curth + '</span>');
-		   		});
-		   	});
+	   		tdcount = curtable.find("tbody > tr:eq(0) > td").length
+	   		for (index = 1; index <= tdcount; index++){
+	   			curth = curhead.eq(index-1).html();
+		   		curth = (curth != null) ? curth : '&nbsp;';
+		   		curtable.find("tbody > tr > td:nth-of-type("+index+")")
+		   			.before('<span class="resp-header">' + curth + '</span>');
+	   		}
 		}
 		else {
 			curtable.find("td").css({

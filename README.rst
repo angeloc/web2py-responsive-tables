@@ -1,3 +1,5 @@
+NOW INCLUDED IN RESPONSIVEKIT https://github.com/angeloc/web2py-responsivekit
+
 ====================
 Responsive tables for web2py
 ====================
